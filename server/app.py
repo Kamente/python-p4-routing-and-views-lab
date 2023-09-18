@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 from flask import Flask
 
 app = Flask(__name__)
@@ -14,9 +13,11 @@ def index():
 def username():
     return f'<h1>Profile for {username} </h1>'
 
+
 @app.route('/<int:count>')
 def count(count):
     return f'<h1>Count here {count}</h1>'
+
 
 @app.route('/<int:num1>/<operator>/<int:num2>')
 def math(num1, operator, num2):
@@ -32,6 +33,7 @@ def math(num1, operator, num2):
         result = "Invalid operator"
 
     return f'<h1>Your answer is {result}</h1>'
+
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
