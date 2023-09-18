@@ -9,9 +9,10 @@ def index():
     return f'<h1>Python Operations with Flask Routing and Views</h1>'
 
 
-@app.route('/<string:username>')
-def username():
-    return f'<h1>Profile for {username} </h1>'
+@app.route('/print/<string:text>')
+def print_string(text):
+    print(text)
+    return f'<h1>Printed String: {text}</h1>'
 
 
 @app.route('/<int:count>')
